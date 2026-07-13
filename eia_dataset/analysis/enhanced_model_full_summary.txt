@@ -1,0 +1,221 @@
+=== ENHANCED OLS MODEL (Filtered, HC3 Robust SE) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.174
+Model:                            OLS   Adj. R-squared:                  0.077
+Method:                 Least Squares   F-statistic:                     3.241
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):           1.01e-05
+Time:                        08:10:30   Log-Likelihood:                 636.32
+No. Observations:                 202   AIC:                            -1229.
+Df Residuals:                     180   BIC:                            -1156.
+Df Model:                          21                                         
+Covariance Type:                  HC3                                         
+==========================================================================================================================
+                                                             coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------------
+Intercept                                                  0.0013      0.002      0.597      0.551      -0.003       0.006
+C(Season)[T.Q2]                                           -0.0035      0.002     -1.536      0.125      -0.008       0.001
+C(Season)[T.Q3]                                           -0.0052      0.003     -1.909      0.056      -0.011       0.000
+C(Season)[T.Q4]                                           -0.0082      0.002     -3.532      0.000      -0.013      -0.004
+C(Regime)[T.R2_CONTANGO]                                   0.0035      0.005      0.638      0.523      -0.007       0.014
+C(Regime)[T.R3_FLAT]                                       0.0035      0.003      1.240      0.215      -0.002       0.009
+C(Regime)[T.R4_BACKWARDATION]                              0.0074      0.003      2.799      0.005       0.002       0.013
+C(Regime)[T.R5_EXTREME_BACKWARDATION]                      0.0054      0.003      1.672      0.095      -0.001       0.012
+Inventory_ZScore                                          -0.0017      0.001     -1.603      0.109      -0.004       0.000
+C(Regime)[T.R2_CONTANGO]:Inventory_ZScore                  0.0021      0.003      0.650      0.516      -0.004       0.008
+C(Regime)[T.R3_FLAT]:Inventory_ZScore                     -0.0008      0.003     -0.314      0.753      -0.006       0.004
+C(Regime)[T.R4_BACKWARDATION]:Inventory_ZScore            -0.0021      0.002     -0.996      0.319      -0.006       0.002
+C(Regime)[T.R5_EXTREME_BACKWARDATION]:Inventory_ZScore     0.0009      0.002      0.391      0.696      -0.004       0.006
+ZScore_sq                                                  0.0022      0.000      5.534      0.000       0.001       0.003
+C(Regime)[T.R2_CONTANGO]:ZScore_sq                        -0.0038      0.007     -0.581      0.561      -0.017       0.009
+C(Regime)[T.R3_FLAT]:ZScore_sq                            -0.0027      0.001     -1.943      0.052      -0.005    2.43e-05
+C(Regime)[T.R4_BACKWARDATION]:ZScore_sq                   -0.0039      0.002     -2.134      0.033      -0.008      -0.000
+C(Regime)[T.R5_EXTREME_BACKWARDATION]:ZScore_sq           -0.0039      0.001     -2.835      0.005      -0.007      -0.001
+WTI_M1M2_Pre                                              -0.0007      0.001     -0.597      0.551      -0.003       0.002
+SPX_Pre_Return                                            -0.0005      0.001     -0.671      0.502      -0.002       0.001
+DXY_Pre_Return                                            -0.0013      0.003     -0.378      0.705      -0.008       0.005
+Geo_Score                                                  0.0015      0.003      0.502      0.615      -0.004       0.007
+==============================================================================
+Omnibus:                        9.282   Durbin-Watson:                   2.101
+Prob(Omnibus):                  0.010   Jarque-Bera (JB):                9.951
+Skew:                          -0.415   Prob(JB):                      0.00690
+Kurtosis:                       3.703   Cond. No.                         17.2
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+
+=== REGIME SUB-MODELS ===
+
+--- R1_DEEP_CONTANGO ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.052
+Method:                 Least Squares   F-statistic:                     7.429
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):           2.10e-07
+Time:                        08:10:30   Log-Likelihood:                 239.81
+No. Observations:                  76   AIC:                            -459.6
+Df Residuals:                      66   BIC:                            -436.3
+Df Model:                           9                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept           -0.0016      0.004     -0.420      0.675      -0.009       0.006
+C(Season)[T.Q2]     -0.0010      0.005     -0.211      0.833      -0.011       0.008
+C(Season)[T.Q3]     -0.0024      0.006     -0.416      0.678      -0.014       0.009
+C(Season)[T.Q4]     -0.0037      0.004     -0.836      0.403      -0.012       0.005
+Inventory_ZScore    -0.0015      0.001     -1.257      0.209      -0.004       0.001
+ZScore_sq            0.0023      0.000      4.656      0.000       0.001       0.003
+WTI_M1M2_Pre         0.0008      0.006      0.141      0.888      -0.010       0.012
+SPX_Pre_Return      -0.0004      0.001     -0.341      0.733      -0.002       0.002
+DXY_Pre_Return      -0.0009      0.009     -0.104      0.917      -0.018       0.016
+Geo_Score            0.0122      0.007      1.705      0.088      -0.002       0.026
+==============================================================================
+Omnibus:                       22.067   Durbin-Watson:                   2.217
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               31.942
+Skew:                          -1.204   Prob(JB):                     1.16e-07
+Kurtosis:                       5.070   Cond. No.                         15.9
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+--- R2_CONTANGO ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.115
+Model:                            OLS   Adj. R-squared:                 -0.160
+Method:                 Least Squares   F-statistic:                    0.3321
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):              0.957
+Time:                        08:10:30   Log-Likelihood:                 125.30
+No. Observations:                  39   AIC:                            -230.6
+Df Residuals:                      29   BIC:                            -214.0
+Df Model:                           9                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.0036      0.005      0.787      0.431      -0.005       0.013
+C(Season)[T.Q2]     -0.0024      0.007     -0.342      0.733      -0.016       0.011
+C(Season)[T.Q3]     -0.0030      0.006     -0.476      0.634      -0.015       0.009
+C(Season)[T.Q4]     -0.0023      0.007     -0.346      0.729      -0.015       0.011
+Inventory_ZScore    -0.0008      0.004     -0.233      0.816      -0.008       0.006
+ZScore_sq           -0.0008      0.003     -0.332      0.740      -0.006       0.004
+WTI_M1M2_Pre        -0.0073      0.010     -0.767      0.443      -0.026       0.011
+SPX_Pre_Return      -0.0021      0.002     -0.933      0.351      -0.007       0.002
+DXY_Pre_Return       0.0004      0.008      0.049      0.961      -0.015       0.016
+Geo_Score           -0.0047      0.008     -0.596      0.551      -0.020       0.011
+==============================================================================
+Omnibus:                        3.246   Durbin-Watson:                   2.296
+Prob(Omnibus):                  0.197   Jarque-Bera (JB):                2.451
+Skew:                          -0.611   Prob(JB):                        0.294
+Kurtosis:                       3.113   Cond. No.                         8.62
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+--- R3_FLAT ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.246
+Model:                            OLS   Adj. R-squared:                  0.109
+Method:                 Least Squares   F-statistic:                     1.414
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):              0.218
+Time:                        08:10:30   Log-Likelihood:                 169.45
+No. Observations:                  53   AIC:                            -320.9
+Df Residuals:                      44   BIC:                            -303.2
+Df Model:                           8                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.0068      0.003      2.230      0.026       0.001       0.013
+C(Season)[T.Q2]     -0.0060      0.004     -1.418      0.156      -0.014       0.002
+C(Season)[T.Q3]     -0.0065      0.006     -1.060      0.289      -0.019       0.006
+C(Season)[T.Q4]     -0.0158      0.008     -1.893      0.058      -0.032       0.001
+Inventory_ZScore    -0.0027      0.003     -1.008      0.314      -0.008       0.003
+ZScore_sq           -0.0007      0.001     -0.496      0.620      -0.003       0.002
+WTI_M1M2_Pre      3.555e-05      0.005      0.007      0.995      -0.010       0.010
+SPX_Pre_Return      -0.0020      0.003     -0.599      0.549      -0.009       0.005
+DXY_Pre_Return      -0.0051      0.009     -0.589      0.556      -0.022       0.012
+Geo_Score                 0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                        0.439   Durbin-Watson:                   2.590
+Prob(Omnibus):                  0.803   Jarque-Bera (JB):                0.353
+Skew:                          -0.192   Prob(JB):                        0.838
+Kurtosis:                       2.886   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+--- R4_BACKWARDATION ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.321
+Model:                            OLS   Adj. R-squared:                  0.117
+Method:                 Least Squares   F-statistic:                     1.364
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):              0.248
+Time:                        08:10:30   Log-Likelihood:                 136.20
+No. Observations:                  40   AIC:                            -252.4
+Df Residuals:                      30   BIC:                            -235.5
+Df Model:                           9                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.0039      0.006      0.671      0.502      -0.007       0.015
+C(Season)[T.Q2]      0.0017      0.005      0.365      0.715      -0.008       0.011
+C(Season)[T.Q3]      0.0040      0.006      0.650      0.515      -0.008       0.016
+C(Season)[T.Q4]      0.0006      0.006      0.093      0.926      -0.012       0.013
+Inventory_ZScore    -0.0024      0.002     -1.345      0.179      -0.006       0.001
+ZScore_sq           -0.0017      0.002     -1.022      0.307      -0.005       0.002
+WTI_M1M2_Pre        -0.0043      0.006     -0.702      0.483      -0.016       0.008
+SPX_Pre_Return       0.0005      0.002      0.274      0.784      -0.003       0.004
+DXY_Pre_Return      -0.0099      0.008     -1.174      0.240      -0.026       0.007
+Geo_Score           -0.0002      0.009     -0.025      0.980      -0.017       0.017
+==============================================================================
+Omnibus:                        0.942   Durbin-Watson:                   2.405
+Prob(Omnibus):                  0.625   Jarque-Bera (JB):                0.883
+Skew:                          -0.144   Prob(JB):                        0.643
+Kurtosis:                       2.332   Cond. No.                         9.14
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+--- R5_EXTREME_BACKWARDATION ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Target   R-squared:                       0.194
+Model:                            OLS   Adj. R-squared:                  0.052
+Method:                 Least Squares   F-statistic:                    0.8584
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):              0.567
+Time:                        08:10:30   Log-Likelihood:                 183.37
+No. Observations:                  61   AIC:                            -346.7
+Df Residuals:                      51   BIC:                            -325.6
+Df Model:                           9                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.0070      0.004      1.824      0.068      -0.001       0.015
+C(Season)[T.Q2]     -0.0035      0.005     -0.741      0.458      -0.013       0.006
+C(Season)[T.Q3]     -0.0080      0.006     -1.246      0.213      -0.021       0.005
+C(Season)[T.Q4]     -0.0049      0.004     -1.131      0.258      -0.013       0.004
+Inventory_ZScore    -0.0004      0.002     -0.162      0.871      -0.005       0.004
+ZScore_sq           -0.0015      0.001     -1.264      0.206      -0.004       0.001
+WTI_M1M2_Pre        -0.0009      0.001     -0.625      0.532      -0.004       0.002
+SPX_Pre_Return      -0.0023      0.002     -0.987      0.324      -0.007       0.002
+DXY_Pre_Return      -0.0055      0.008     -0.699      0.485      -0.021       0.010
+Geo_Score           -0.0165      0.016     -1.018      0.309      -0.048       0.015
+==============================================================================
+Omnibus:                        0.412   Durbin-Watson:                   1.906
+Prob(Omnibus):                  0.814   Jarque-Bera (JB):                0.458
+Skew:                          -0.184   Prob(JB):                        0.795
+Kurtosis:                       2.790   Cond. No.                         13.9
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

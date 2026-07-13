@@ -1,0 +1,7 @@
+Metric,Value,Benchmark
+R2,0.174,>0.05
+IC_Overall,0.13,>0.05
+Hit_Rate,0.585,>50%
+CV_Accuracy,0.474,>33%
+Profit_Factor,1.54,>1.0
+Sharpe,1.14,>0.5

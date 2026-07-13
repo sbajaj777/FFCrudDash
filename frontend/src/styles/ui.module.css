@@ -1,0 +1,398 @@
+.appShell {
+	min-height: 100vh;
+	padding: 18px;
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 390px;
+	gap: 18px;
+	margin-top: 18px;
+	align-items: start;
+}
+
+.mainColumn,
+.sideColumn {
+	display: grid;
+	gap: 18px;
+}
+
+.heroCard,
+.cardLarge,
+.focusArea {
+	background: var(--panel);
+	border: 1px solid var(--line);
+	border-radius: 24px;
+	padding: 18px;
+	backdrop-filter: blur(16px);
+}
+
+.heroTopRow {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	gap: 18px;
+	align-items: start;
+}
+
+.kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 11px;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--blue);
+}
+
+.heroTitle {
+	margin: 8px 0 10px;
+	font-size: clamp(2rem, 3vw, 3.45rem);
+	line-height: 0.98;
+	letter-spacing: -0.04em;
+	max-width: 12ch;
+}
+
+.heroCopy {
+	margin: 0;
+	max-width: 66ch;
+	color: var(--muted);
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.heroStatusBox {
+	padding: 16px;
+	border-radius: 20px;
+	background: linear-gradient(180deg, rgba(89, 180, 255, 0.12), rgba(0, 208, 132, 0.04));
+	border: 1px solid var(--line);
+}
+
+.heroStatusLabel,
+.cardLabel,
+.metricLabel {
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 10px;
+	color: var(--muted);
+}
+
+.heroStatusValue {
+	margin-top: 8px;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.heroChartPanel {
+	padding: 16px;
+	border-radius: 20px;
+	background: linear-gradient(180deg, rgba(89, 180, 255, 0.12), rgba(0, 208, 132, 0.04));
+	border: 1px solid var(--line);
+	min-width: 320px;
+}
+
+.heroChartStack {
+	display: grid;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+.heroMiniChart {
+	height: 118px;
+	margin-top: 8px;
+}
+
+.chartCardLabel {
+	font-size: 10px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.chartCardTitle {
+	margin-top: 4px;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--text);
+}
+
+.heroStatusMeta,
+.metricMeta,
+.noteText {
+	margin-top: 6px;
+	color: var(--muted);
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+
+.statGrid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.metricCard,
+.miniStat {
+	padding: 14px;
+	border-radius: 18px;
+	border: 1px solid var(--line);
+	background: rgba(255,255,255,0.025);
+}
+
+.metricValue {
+	margin-top: 8px;
+	font-size: 1.55rem;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+}
+
+.metricPositive { box-shadow: inset 0 0 0 1px rgba(0,208,132,0.10) }
+.metricNegative { box-shadow: inset 0 0 0 1px rgba(255,107,107,0.10) }
+.metricWarning { box-shadow: inset 0 0 0 1px rgba(255,179,71,0.10) }
+
+.focusArea { padding: 0 }
+
+.stack { display: grid; gap: 18px }
+
+.cardGrid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+	gap: 18px;
+}
+
+.cardHeaderRow {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
+}
+
+.cardTitleText {
+	margin-top: 4px;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.cardPill {
+	padding: 6px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	color: var(--muted);
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+.scopeList {
+	list-style: none;
+	padding: 0;
+	margin: 14px 0 0;
+	display: grid;
+	gap: 10px;
+}
+
+.scopeItem {
+	padding: 12px 12px 12px 40px;
+	position: relative;
+	border-radius: 16px;
+	background: rgba(255,255,255,0.03);
+	border: 1px solid rgba(255,255,255,0.04);
+}
+
+.scopeItem::before {
+	content: '';
+	position: absolute;
+	left: 14px;
+	top: 16px;
+	width: 10px;
+	height: 10px;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--blue), var(--green));
+}
+
+.newsList { margin-top: 12px; display: grid; gap: 10px }
+.newsRow {
+	display: grid;
+	grid-template-columns: 72px minmax(0, 1fr);
+	gap: 12px;
+	align-items: start;
+	padding: 12px 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.newsRow:last-child { border-bottom: 0 }
+.newsTime { color: var(--blue); font-size: 12px; font-family: 'Space Mono', monospace }
+.newsHeadline { font-size: 0.98rem; line-height: 1.45; font-weight: 600 }
+.newsSource { margin-top: 4px; color: var(--muted); font-size: 12px }
+
+.signalStack { display: grid; gap: 10px; margin-top: 12px }
+.signalItem {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	gap: 10px;
+	align-items: center;
+	padding: 12px 14px;
+	border-radius: 16px;
+	border: 1px solid var(--line);
+	background: rgba(255,255,255,0.025);
+}
+.signalImmediate { background: rgba(255,107,107,0.06) }
+.signalMonitor { background: rgba(255,179,71,0.05) }
+.signalNeutral { background: rgba(89,180,255,0.05) }
+
+.signalTag {
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 8px;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	font-size: 10px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.signalText { font-size: 0.95rem; line-height: 1.4 }
+.signalTime { color: var(--muted); font-size: 12px; font-family: 'Space Mono', monospace }
+
+.chartStack {
+	display: grid;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.sideChartCard {
+	padding: 12px;
+	border-radius: 18px;
+	border: 1px solid var(--line);
+	background: rgba(255,255,255,0.025);
+}
+
+.miniChart {
+	height: 150px;
+	margin-top: 10px;
+}
+
+.matrixGrid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.miniValue {
+	margin-top: 8px;
+	font-weight: 800;
+	font-size: 1.15rem;
+}
+
+.cardLarge :global(.card) {
+	background: transparent;
+	border: 0;
+	padding: 0;
+}
+
+.pageIntro {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
+}
+
+.subtleDivider {
+	height: 1px;
+	background: var(--line);
+	margin: 14px 0;
+}
+
+.headerShell {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.headerBrand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.headerOrb {
+	width: 12px;
+	height: 12px;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--green), var(--blue));
+	box-shadow: 0 0 0 6px rgba(0, 208, 132, 0.12);
+}
+
+.headerTitle { font-weight: 800; letter-spacing: 0.16em; font-size: 12px; text-transform: uppercase }
+.headerMeta { color: var(--muted); font-size: 12px }
+
+.tickerBar {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(130px, 1fr);
+	gap: 10px;
+	margin-top: 12px;
+	overflow-x: auto;
+	padding-bottom: 2px;
+}
+
+.tickerCard {
+	padding: 12px;
+	border-radius: 18px;
+	border: 1px solid var(--line);
+	background: rgba(255,255,255,0.025);
+	text-align: left;
+	cursor: pointer;
+	width: 100%;
+}
+
+.tickerActive {
+	border-color: rgba(89,180,255,0.35);
+	box-shadow: inset 0 0 0 1px rgba(89,180,255,0.22), 0 0 0 1px rgba(0, 208, 132, 0.08);
+	background: linear-gradient(180deg, rgba(89,180,255,0.12), rgba(255,255,255,0.03));
+}
+
+.tickerLabel { color: var(--muted); font-size: 11px }
+.tickerValue { margin-top: 6px; font-weight: 700; font-size: 1rem }
+.tickerChange { margin-top: 4px; font-size: 12px }
+
+.tabs {
+	display: flex;
+	gap: 8px;
+	margin-top: 12px;
+	overflow-x: auto;
+	padding-bottom: 4px;
+}
+
+.tabButton {
+	padding: 10px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	background: rgba(255,255,255,0.02);
+	color: var(--text);
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.tabActive {
+	background: linear-gradient(135deg, rgba(89,180,255,0.18), rgba(0,208,132,0.12));
+	border-color: rgba(89,180,255,0.25);
+}
+
+.footerNote { color: var(--muted); font-size: 12px }
+
+@media (max-width: 1180px) {
+	.layout { grid-template-columns: 1fr }
+	.heroTopRow { grid-template-columns: 1fr }
+	.cardGrid { grid-template-columns: 1fr }
+}
+
+@media (max-width: 760px) {
+	.appShell { padding: 14px }
+	.statGrid, .matrixGrid { grid-template-columns: 1fr }
+	.newsRow { grid-template-columns: 1fr }
+	.signalItem { grid-template-columns: 1fr; align-items: start }
+}

@@ -1,0 +1,41 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     WTI_Return_SameDay   R-squared:                       0.091
+Model:                            OLS   Adj. R-squared:                  0.030
+Method:                 Least Squares   F-statistic:                     1.484
+Date:                Tue, 23 Jun 2026   Prob (F-statistic):              0.100
+Time:                        08:00:45   Log-Likelihood:                 820.96
+No. Observations:                 269   AIC:                            -1606.
+Df Residuals:                     251   BIC:                            -1541.
+Df Model:                          17                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================================================
+                                                             coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------------
+Intercept                                                  0.0031      0.002      1.598      0.111      -0.001       0.007
+C(Season)[T.Q2]                                           -0.0032      0.002     -1.513      0.131      -0.007       0.001
+C(Season)[T.Q3]                                           -0.0043      0.002     -1.970      0.050      -0.009    -2.1e-06
+C(Season)[T.Q4]                                           -0.0062      0.002     -2.829      0.005      -0.010      -0.002
+C(Regime)[T.R2_CONTANGO]                                  -0.0008      0.002     -0.332      0.740      -0.006       0.004
+C(Regime)[T.R3_FLAT]                                       0.0012      0.002      0.510      0.610      -0.003       0.006
+C(Regime)[T.R4_BACKWARDATION]                              0.0029      0.002      1.197      0.232      -0.002       0.008
+C(Regime)[T.R5_EXTREME_BACKWARDATION]                      0.0027      0.003      0.997      0.320      -0.003       0.008
+Inventory_ZScore                                          -0.0008      0.001     -0.603      0.547      -0.004       0.002
+C(Regime)[T.R2_CONTANGO]:Inventory_ZScore                  0.0008      0.003      0.295      0.768      -0.005       0.006
+C(Regime)[T.R3_FLAT]:Inventory_ZScore                     -0.0020      0.002     -0.995      0.321      -0.006       0.002
+C(Regime)[T.R4_BACKWARDATION]:Inventory_ZScore            -0.0035      0.003     -1.294      0.197      -0.009       0.002
+C(Regime)[T.R5_EXTREME_BACKWARDATION]:Inventory_ZScore     0.0002      0.002      0.104      0.917      -0.004       0.004
+WTI_M1M2_Pre                                              -0.0014      0.001     -1.552      0.122      -0.003       0.000
+SPX_Pre_Return                                            -0.0008      0.001     -1.225      0.222      -0.002       0.001
+DXY_Pre_Return                                            -0.0029      0.003     -1.115      0.266      -0.008       0.002
+TNX_Pre_BpChange                                       -1.101e-05      0.000     -0.088      0.930      -0.000       0.000
+Geo_Score                                                 -0.0037      0.003     -1.388      0.166      -0.009       0.002
+==============================================================================
+Omnibus:                       27.092   Durbin-Watson:                   2.000
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               48.142
+Skew:                          -0.572   Prob(JB):                     3.52e-11
+Kurtosis:                       4.728   Cond. No.                         34.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

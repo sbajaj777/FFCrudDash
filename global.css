@@ -1,0 +1,102 @@
+/* ─── Global CSS — Energy Trading Dashboard ─── */
+
+:root {
+  --bg:      #0a0c10;
+  --bg2:     #111318;
+  --bg3:     #181c24;
+  --bg4:     #1e2330;
+  --border:  #ffffff12;
+  --border2: #ffffff20;
+
+  --text:    #e8eaf0;
+  --text2:   #8b90a0;
+  --text3:   #5a5f70;
+
+  --green:   #00d084;
+  --red:     #ff4757;
+  --amber:   #ffb347;
+  --blue:    #4a9eff;
+  --purple:  #8b5cf6;
+  --teal:    #14b8a6;
+
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* Utility classes */
+.mono { font-family: var(--font-mono); }
+.green { color: var(--green); }
+.red   { color: var(--red);   }
+.amber { color: var(--amber); }
+.blue  { color: var(--blue);  }
+.purple{ color: var(--purple);}
+.teal  { color: var(--teal);  }
+.muted { color: var(--text2); }
+
+/* Badge variants */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.badge-green  { background: rgba(0,208,132,.12);  color: var(--green);  border: 1px solid rgba(0,208,132,.25);  }
+.badge-red    { background: rgba(255,71,87,.12);   color: var(--red);    border: 1px solid rgba(255,71,87,.25);   }
+.badge-amber  { background: rgba(255,179,71,.12);  color: var(--amber);  border: 1px solid rgba(255,179,71,.25);  }
+.badge-blue   { background: rgba(74,158,255,.12);  color: var(--blue);   border: 1px solid rgba(74,158,255,.25);  }
+.badge-purple { background: rgba(139,92,246,.12);  color: var(--purple); border: 1px solid rgba(139,92,246,.25);  }
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+@keyframes ldot {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50%       { opacity: 1;    transform: scale(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.anim-fade  { animation: fadeIn  0.3s ease forwards; }
+.anim-slide { animation: slideIn 0.25s ease forwards; }

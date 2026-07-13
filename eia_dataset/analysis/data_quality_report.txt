@@ -1,0 +1,17 @@
+=== DATA QUALITY REPORT ===
+Total Rows: 279
+Duplicate Rows: 0
+
+--- Missing Values ---
+Inventory_ZScore          9
+Inventory_Bucket         19
+WTI_Reaction_Strength    19
+
+Invalid Regimes: None
+Invalid Seasons: None
+
+--- Extreme Outliers (3x IQR) ---
+Inventory_Change: 0 extreme outliers
+WTI_Return_SameDay: 0 extreme outliers
+WTI_Return_1D: 2 extreme outliers
+WTI_M1M2_Change: 15 extreme outliers

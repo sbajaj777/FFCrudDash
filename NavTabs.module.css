@@ -1,0 +1,28 @@
+/* NavTabs.module.css */
+.nav {
+  display: flex;
+  gap: 2px;
+  padding: 8px 24px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--text2);
+  background: transparent;
+  border: none;
+  transition: all 0.18s;
+  letter-spacing: 0.02em;
+}
+.tab:hover  { color: var(--text); background: var(--bg3); }
+.active     { color: var(--green) !important; background: rgba(0,208,132,.12) !important; font-weight: 600; }

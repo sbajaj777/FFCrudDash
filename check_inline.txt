@@ -1,0 +1,48 @@
+# ─── Standard Library ───
+import warnings
+warnings.filterwarnings('ignore')
+
+import os
+import re
+import json
+from pathlib import Path
+from datetime import datetime, timedelta
+from collections import defaultdict
+
+# ─── Numerical & Data ───
+import numpy as np
+import pandas as pd
+from scipy import stats, signal
+from scipy.cluster.hierarchy import fcluster, linkage
+from scipy.spatial.distance import squareform
+
+# ─── Statistical Modeling ───
+from statsmodels.tsa.stattools import grangercausalitytes
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# 1. Time series of Brent, Gasoil and GO-Brent spread
+fig, ax1 = plt.subplots(figsize=(14, 6))
+ax1.plot(unified.index, unified['brent_c1'], color='#1f77b4', label='Brent (LHS)', alpha=0.8)
+ax1.set_ylabel('Brent Price ($/bbl)', color='#1f77b4')
+ax1.tick_params(axis='y', labelcolor='#1f77b4')
+
+ax2 = ax1.twinx()
+ax2.plot(unified.index, unified['go_brent_spread'], color='#d62728', label='GO-Brent Spread (RHS)', alpha=0.8)
+ax2.
+# ─── Regime Visualization ───
+
+fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+
+regime_colors = plt.cm.Set2(np.linspace(0, 1, len(regime_names)))
+color_map = {r: regime_colors[i] for i, r in enumerate(sorted(regime_names.keys()))}
+
+# Panel 1: Regime timeline
+ax = axes[0, 0]
+for r in sorted(regime_names.keys()):
+    mask = unified['regime'] == r
+    dates = unified.index[mask]
+    for d in dates:
+        ax.axvline(x=d, color=color_map[r], alpha=0.3, linewidth=0.3)
+ax.plot(unified.index, unifie

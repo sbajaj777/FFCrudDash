@@ -1,0 +1,43 @@
+{
+  "open_positions": [
+    {
+      "id": "PT1781849930_CL_m1_m12",
+      "product": "CL",
+      "structure": "m1_m12",
+      "direction": "BUY",
+      "entry_date": "2026-06-19T06:18:41.704625",
+      "entry_spread": 7.62,
+      "entry_z": -2.1647,
+      "entry_m1": 77.34,
+      "entry_m2": 69.72,
+      "regime": "R5_EXTREME_BACKWARDATION",
+      "lot_size": 1000.0,
+      "current_spread": 3.58,
+      "current_pnl": -4040.0,
+      "current_z": -2.3664,
+      "days_held": 5,
+      "last_updated": "2026-06-24T09:02:39.145601",
+      "dynamic_stop_z": 2.9147
+    },
+    {
+      "id": "PT1782091511_LCO_m1_m12",
+      "product": "LCO",
+      "structure": "m1_m12",
+      "direction": "BUY",
+      "entry_date": "2026-06-22T01:25:05.952146",
+      "entry_spread": 2.15,
+      "entry_z": -2.2156,
+      "entry_m1": 80.14,
+      "entry_m2": 77.99,
+      "regime": "R5_EXTREME_BACKWARDATION",
+      "lot_size": 1000.0,
+      "current_spread": -2.19,
+      "current_pnl": -4340.0,
+      "current_z": -2.821,
+      "days_held": 2,
+      "last_updated": "2026-06-24T09:02:39.145601",
+      "dynamic_stop_z": 2.9656
+    }
+  ],
+  "closed_trades": []
+}

@@ -1,0 +1,28 @@
+/* TickerBar.module.css */
+.bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 2px 0 4px;
+  scrollbar-width: none;
+}
+.bar::-webkit-scrollbar { display: none; }
+
+.card {
+  flex-shrink: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  min-width: 155px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  border-top-width: 2px;
+}
+.card:hover { border-color: var(--border2); }
+.up   { border-top-color: var(--green); }
+.down { border-top-color: var(--red);   }
+
+.symbol { font-size: 10px; font-family: var(--font-mono); color: var(--text2); letter-spacing: 0.08em; margin-bottom: 5px; }
+.price  { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; }
+.change { font-size: 11px; margin-top: 3px; }

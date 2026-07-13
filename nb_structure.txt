@@ -1,0 +1,72 @@
+Cell 0 [markdown]: # Gasoil–Brent Feedback Loop: Quantitative Evidence from Futures Markets
+Cell 1 [markdown]: ## Setup & Configuration
+Cell 2 [code]: # ─── Standard Library ───
+Cell 3 [markdown]: ---
+Cell 4 [code]: # ─── Load Brent Settlement Data (Daily, LCOSettle 2.csv) ───
+Cell 5 [code]: # ─── Load Gasoil Intraday Data and Resample to Daily ───
+Cell 6 [code]: # ─── Also load Brent intraday → daily for the same period (2021+) ───
+Cell 7 [code]: # ─── Comprehensive Data Inventory ───
+Cell 8 [code]: # ─── Build Unified Daily Dataset ───
+Cell 9 [markdown]: ### Trader's Critique — Data Inventory
+Cell 10 [markdown]: ---
+Cell 11 [code]: # ─── GO-Brent Spread ───
+Cell 12 [code]: # ─── Brent Calendar Spreads ───
+Cell 13 [code]: # ─── Returns ───
+Cell 14 [code]: # ─── Volatility ───
+Cell 15 [code]: # ─── Rolling Z-Scores & Percentiles ───
+Cell 16 [code]: # ─── Visualization: Key Derived Series ───
+Cell 17 [markdown]: ### Trader's Critique — Derived Series
+Cell 18 [markdown]: ---
+Cell 19 [code]: # ─── Event Detection Using Multiple Criteria ───
+Cell 20 [code]: # ─── Cluster Consecutive Event Days into Discrete Events ───
+Cell 21 [code]: # ─── Visualize Event Detection ───
+Cell 22 [markdown]: ### Trader's Critique — Event Detection
+Cell 23 [markdown]: ---
+Cell 24 [markdown]: ---
+Cell 25 [code]: print('EMPIRICAL MARKET PROPAGATION TIMELINE')
+Cell 26 [code]: # ─── Propagation Analysis Engine ───
+Cell 27 [code]: # ─── Summary Statistics at Each Horizon ───
+Cell 28 [code]: # ─── Average Historical Path Visualization ───
+Cell 29 [code]: # ─── Time to Peak and Normalization ───
+Cell 30 [markdown]: ### Trader's Critique — Propagation Timeline
+Cell 31 [markdown]: ---
+Cell 32 [code]: # ─── Cross-Correlation Analysis ───
+Cell 33 [code]: # ─── Granger Causality Tests ───
+Cell 34 [code]: # ─── Rolling Correlation & Beta ───
+Cell 35 [code]: # ─── VAR Model & Impulse Response Functions ───
+Cell 36 [code]: # ─── Impulse Response Functions ───
+Cell 37 [code]: # ─── Cointegration Tests ───
+Cell 38 [code]: # ─── Lead-Lag Matrix: Rank All Relationships ───
+Cell 39 [markdown]: ### Trader's Critique — Lead-Lag Dynamics
+Cell 40 [markdown]: ---
+Cell 41 [code]: # ─── Test the Feedback Loop Hypothesis ───
+Cell 42 [code]: # ─── Full Loop Timing Analysis ───
+Cell 43 [markdown]: ### Asymmetry Test: Widening vs Narrowing
+Cell 44 [code]: print('\nASYMMETRY TEST: WIDENING VS NARROWING')
+Cell 45 [markdown]: ### Trader's Critique — Feedback Loop Verdict
+Cell 46 [markdown]: ---
+Cell 47 [code]: # ─── Regime Detection Using Gaussian Mixture Models ───
+Cell 48 [code]: # ─── Characterize Each Regime ───
+Cell 49 [code]: # ─── Regime-Conditional Propagation Analysis ───
+Cell 50 [code]: # ─── Regime Visualization ───
+Cell 51 [markdown]: ### Trader's Critique — Regime Analysis
+Cell 52 [markdown]: ---
+Cell 53 [code]: # ─── Classify Events as Successes vs Failures ───
+Cell 54 [code]: # ─── Compare Success vs Failure Characteristics ───
+Cell 55 [markdown]: ### Trader's Critique — Failure Analysis
+Cell 56 [markdown]: ---
+Cell 57 [code]: # ─── Build Feature Vectors for Event Similarity ───
+Cell 58 [code]: # ─── Compute Similarity Matrix ───
+Cell 59 [markdown]: ### Trader's Critique — Historical Analogues
+Cell 60 [markdown]: ---
+Cell 61 [code]: # ─── Build Comprehensive Variable Set ───
+Cell 62 [code]: # ─── Systematic Lead-Lag Grid Search ───
+Cell 63 [code]: # ─── Propagation Chain Discovery ───
+Cell 64 [markdown]: ### Trader's Critique — Relationship Discovery
+Cell 65 [markdown]: ---
+Cell 66 [code]: # ─── Compile All Statistically Significant Findings ───
+Cell 67 [code]: # 3. Signal reliability assessment
+Cell 68 [code]: # 5. False signal characteristics
+Cell 69 [code]: # ─── Summary Dashboard ───
+Cell 70 [markdown]: ---
+Cell 71 [markdown]: ---

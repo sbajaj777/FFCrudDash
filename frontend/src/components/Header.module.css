@@ -1,0 +1,26 @@
+/* Component-scoped Header.module.css (copied from styles) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo   { display: flex; align-items: center; gap: 10px; }
+.dot    {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+.logoText { font-size: 13px; letter-spacing: 0.12em; font-weight: 700; }
+.version  { font-size: 10px; color: var(--text3); background: var(--bg3);
+            border: 1px solid var(--border); padding: 1px 6px; border-radius: 3px; }
+
+.right      { display: flex; align-items: center; gap: 16px; }
+.liveBadge  { animation: pulse 2s infinite; }
+.clock      { font-size: 12px; color: var(--text2); }

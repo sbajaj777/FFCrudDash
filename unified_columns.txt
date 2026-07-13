@@ -1,0 +1,76 @@
+---
+# ─── Load Gasoil Intraday Data and Resample to Daily ───
+# LGO_data.csv is 1-min data; we extract the last price per day per contract
+
+def load_intraday_to_daily(filepath, prefix='LGO'):
+    """
+    Load 1-minute outright data and resample to daily close.
+    Memory-efficient: reads only price columns.
+    """
+    print(f"Loading {filepath.name} ({filepath.stat().st_size / 1e9:.2f} GB)...")
+
+    # Read header to find weighted_mid columns
+    with open(filepath, 'r') as f:
+        meta_line = f.readline()
+        header_line = f.readline().strip()
+
+    headers = [h.strip() for h in header_line.split(',')]
+
+    # Identify columns
+    usecols = [0]  # timestamp
+    col_map = {0: 'timestamp'}
+
+    for i, h in enumerate(headers):
+        if 'weighted_mid' in h:
+            usecols.append(i)
+            contract_num = h.split('||')[0].strip()
+            col_map[i] = f'{prefix}_{contract_num}'
+
+    # Read CSV in chunks for memory efficiency
+    chunks = []
+    for chunk in pd.read_csv(filepath, skiprows=1, header=0, chunksize=500_000,
+                              low_memory=False):
+        # Get timestamp and weighted_mid columns
+        ts_col = chunk.columns[0]
+        mid_cols = [col for col in chunk.columns if 'weighted_mid' in col]
+
+        sub = chunk[[ts_col] + mid_cols].copy()
+        sub[ts_col] = pd.to_datetime(sub[ts_col], utc=True, errors='coerce')
+        sub = sub.set_index(ts_col)
+        sub.index.name = 'timestamp'
+
+        # Rename columns
+        rename_map = {
+---
+# ─── Build Unified Daily Dataset ───
+# Align Brent and Gasoil on common dates for the overlap period
+
+# For the 2021+ period: use intraday-derived daily close for both
+# For 2016-2020: only Brent settle data available (no Gasoil)
+
+# Primary working dataset: overlap period where both Brent & Gasoil available
+common_dates = brent_intraday_daily.index.intersection(gasoil_daily.index)
+
+brent_aligned = brent_intraday_daily.loc[common_dates].copy()
+gasoil_aligned = gasoil_daily.loc[common_dates].copy()
+
+# Rename for clarity
+brent_cols = {col: col.replace('LCO_intra_', 'brent_') for col in brent_aligned.columns}
+gasoil_cols = {col: col.replace('LGO_', 'gasoil_') for col in gasoil_aligned.columns}
+
+brent_aligned = brent_aligned.rename(columns=brent_cols)
+gasoil_aligned = gasoil_aligned.rename(columns=gasoil_cols)
+
+# Merge
+unified = pd.concat([brent_aligned, gasoil_aligned], axis=1)
+unified = unified.dropna(subset=['brent_c1', 'gasoil_c1'])
+
+print(f"Unified dataset: {unified.shape[0]} trading days, {unified.shape[1]} columns")
+print(f"Date range: {unified.index.min().date()} to {unified.index.max().date()}")
+print(f"\nBrent columns: {[c for c in unified.columns if 'brent' in c]}")
+print(f"Gasoil columns: {[c for c in unified.columns if 'gasoil' in c]}")
+
+# Also keep the longer Brent settle series for extended analyses
+brent_long = brent_settle.copy()
+brent_long.columns = [c.replace('LCO_', 'brent_') for c in brent_long.columns]
+print(f"\nExtended Brent series: {brent_long.shape[0]} t
